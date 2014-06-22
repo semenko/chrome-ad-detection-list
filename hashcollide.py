@@ -23,4 +23,4 @@ for hash in google_hashes:
     else:
         unmapped.append(hash)
 
-print("%d unmapped of %d total (%d%% mapped)" % (len(unmapped), len(google_hashes), len(unmapped)/len(google_hashes)))
+print("%d unmapped of %d total (%d%% mapped)" % (len(unmapped), len(google_hashes), 100-100*len(unmapped)//len(google_hashes)))
