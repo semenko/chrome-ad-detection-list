@@ -9,6 +9,12 @@ with open('someonewhocares.hosts', 'r') as file:
             hostname = line.split()[1]
             map[sha256(hostname.strip()).hexdigest()[:16].upper()] = hostname  # TODO: Catch duplicates from collisions?
 
+with open('mvps.hosts', 'r') as file:
+    for line in file.readlines():
+        if line.startswith("0.0.0.0"):
+            hostname = line.split()[1]
+            map[sha256(hostname.strip()).hexdigest()[:16].upper()] = hostname  # TODO: Catch duplicates from collisions?
+
 google_hashes = []
 with open('hashed_ad_networks.cc', 'r') as file:
     for line in file.readlines():
