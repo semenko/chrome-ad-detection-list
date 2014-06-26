@@ -4,11 +4,11 @@ from hashlib import sha256
 
 map = {}
 def update_map(filename):
-    with open(filename, 'r') as file:
+    with open('hosts-data/' + filename, 'r') as file:
         for line in file.readlines():
             if line.startswith("127.0.0.1") or line.startswith("0.0.0.0"):
                 hostname = line.split()[1]
-                map[sha256(hostname.strip()).hexdigest()[:16].upper()] = hostname  # TODO: Catch duplicates from collisions?
+                map[sha256(hostname.strip()).hexdigest()[:16].upper()] = hostname
 
 update_map('someonewhocares.hosts')
 update_map('mvps.hosts')
