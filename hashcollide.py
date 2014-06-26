@@ -13,6 +13,8 @@ def update_map(filename):
 update_map('someonewhocares.hosts')
 update_map('mvps.hosts')
 update_map('hosts-file.net')
+update_map('malwaredomainlist.com')
+update_map('malwaredomains.lehigh.edu')
 
 google_hashes = []
 with open('hashed_ad_networks.cc', 'r') as file:
